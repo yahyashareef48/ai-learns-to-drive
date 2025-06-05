@@ -1,20 +1,26 @@
-// p5.js setup function - runs once when the program starts
+let car;
+
 function setup() {
-  // Create canvas that fills most of the window
-  createCanvas(800, 600);
+  createCanvas(6000, 3000);
+  car = new Car(3000, 1500, 80, 160);
 }
 
-// p5.js draw function - runs continuously after setup
 function draw() {
-  // Set the background to dark gray
-  background(50);
+  // Handle forward/backward movement
+  if (keyIsDown(UP_ARROW)) {
+    car.acc += 0.1;
+  } else if (keyIsDown(DOWN_ARROW)) {
+    car.acc -= 0.1;
+  }
 
-  // Draw a moving circle
-  fill(255, 100, 100);
-  ellipse(mouseX, mouseY, 50, 50);
+  // Handle turning left/right
+  if (keyIsDown(LEFT_ARROW)) {
+    car.turn(-1);
+  } else if (keyIsDown(RIGHT_ARROW)) {
+    car.turn(1);
+  }
 
-  // Display some text
-  fill(255);
-  textSize(24);
-  text("A.I. Learns to Drive", width / 2 - 100, 50);
+  background(100);
+  car.move();
+  car.show();
 }
