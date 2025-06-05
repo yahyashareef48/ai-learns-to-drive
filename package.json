@@ -1,0 +1,23 @@
+{
+  "name": "ai-learns-to-drive",
+  "version": "1.0.0",
+  "description": "AI learning to drive using p5.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "p5js",
+    "ai",
+    "machine-learning"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "p5": "^2.0.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
